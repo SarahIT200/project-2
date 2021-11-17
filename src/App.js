@@ -1,34 +1,43 @@
 import { Route, Routes } from "react-router"
-import CardPageOne from "./pages/CardPageOne"
-import Navbaritem from "./Componets/Navbaritem"
-import "./index.css"
+
+import Navbaritem from "./components/Navbaritem"
+
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import axios from "axios"
-import AnimeList from "./Componets/AnimeList"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import AnimeContext from "./utils/AnimeContext"
+import Anime from "./pages/Anime"
+import Home from "./pages/Home"
 
 function App() {
   const [animes, setAnime] = useState([])
 
-  axios.get("https://api.jikan.moe/v3/top/anime").then(response => {
-    const data = response.data
-    setAnime(data)
-  })
+  const getPost = async () => {
+    try {
+      const response = await axios.get("https://api.jikan.moe/v3/top/anime")
+      setAnime(response.data.top)
+    } catch (error) {
+      console.log(error?.response?.data)
+    }
+  }
+
+  useEffect(() => {
+    getPost()
+  }, [])
 
   const store = {
-    anime: animes,
+    animes: animes,
   }
   return (
     <AnimeContext.Provider value={store}>
       <Navbaritem />
-      <AnimeList />
 
       <Routes>
-        <Route path="/" element={<CardPageOne />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/animes" element={<Anime />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </AnimeContext.Provider>
   )
