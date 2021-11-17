@@ -1,7 +1,5 @@
 import { Route, Routes } from "react-router"
-
 import Navbaritem from "./components/Navbaritem"
-
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import axios from "axios"
@@ -13,7 +11,7 @@ import Home from "./pages/Home"
 function App() {
   const [animes, setAnime] = useState([])
 
-  const getPost = async () => {
+  const getAnime = async () => {
     try {
       const response = await axios.get("https://api.jikan.moe/v3/top/anime")
       setAnime(response.data.top)
@@ -23,7 +21,7 @@ function App() {
   }
 
   useEffect(() => {
-    getPost()
+    getAnime()
   }, [])
 
   const store = {
@@ -34,10 +32,10 @@ function App() {
       <Navbaritem />
 
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/animes" element={<Anime />} />
-        <Route path="/" element={<Home />} />
       </Routes>
     </AnimeContext.Provider>
   )

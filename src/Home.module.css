@@ -1,0 +1,37 @@
+.btnContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-end;
+    gap: 60px;
+    padding-right: 200px;
+}
+
+.btn1 {
+    position: absolute;
+    margin: 30px;
+    bottom: 100px;
+    right: 200px;
+    width: 300px;
+    height: 100px;
+    color: white;
+    font-size: 50px;
+    /* background-color: black; */
+    background-image: url("https://i.pinimg.com/564x/b3/99/55/b399556ab83fb5f39969a77040e4d8af.jpg");
+    border-radius: 40px;
+}
+
+.btn2 {
+    position: absolute;
+    margin: 30px;
+    bottom: 300px;
+    right: 200px;
+    width: 300px;
+    height: 100px;
+    color: white;
+    font-size: 50px;
+    /* background-color: black; */
+    background-image: url("https://i.pinimg.com/564x/d3/66/6c/d3666cd4f0d98d5d476b22ddaa704ad1.jpg");
+    border-radius: 40px;
+
+}

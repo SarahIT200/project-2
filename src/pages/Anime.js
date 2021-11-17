@@ -1,12 +1,13 @@
 import { useContext } from "react"
 import { Container, Row } from "react-bootstrap"
+import AnimeCard from "../components/AnimeCard"
 import AnimeContext from "../utils/AnimeContext"
 
-function AnimeCard() {
+function Anime() {
   const { animes } = useContext(AnimeContext)
   return (
     <Container>
-      <Row>
+      <Row xs={1} sm={2} md={3} className="g-4 my-5">
         {animes.map(anime => (
           <AnimeCard key={anime.mal_id} anime={anime} />
         ))}
@@ -15,4 +16,4 @@ function AnimeCard() {
   )
 }
 
-export default AnimeCard
+export default Anime
