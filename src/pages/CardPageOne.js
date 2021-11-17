@@ -25,14 +25,14 @@ function CardPageOne() {
             </Link>
           </Col>
           <Col>
-            <Link to="/music">
+            <Link to="/anime">
               <Card style={{ height: 100 }}>
                 <Card.Img
                   src="https://i.pinimg.com/236x/f2/c5/de/f2c5de41e0b37777543bcf56f80ec453.jpg"
                   alt="Card image"
                 />
                 <Card.ImgOverlay>
-                  <Card.Title className="text-white mt-4">Music</Card.Title>
+                  <Card.Title className="text-white mt-4">Anime</Card.Title>
                   <Card.Text></Card.Text>
                 </Card.ImgOverlay>
               </Card>
