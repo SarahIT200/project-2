@@ -145,7 +145,21 @@ function App() {
       console.log(error?.response?.data)
     }
   }
-
+  //delete like
+  const deleteLike = async id => {
+    try {
+      await axios.delete(`https://vast-chamber-06347.herokuapp.com/api/v2/testProject/items/${id}`, {
+        headers: {
+          Authorization: localStorage.projectToken,
+        },
+      })
+      getAnime()
+      getProfile()
+      console.log("delete success")
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
   //context value
   const store = {
     animes: animes,
@@ -158,6 +172,7 @@ function App() {
     confirmProfile: confirmProfile,
     like: like,
     likes: likes,
+    deleteLike: deleteLike,
   }
   return (
     <AnimeContext.Provider value={store}>

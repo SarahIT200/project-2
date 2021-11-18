@@ -13,11 +13,11 @@ function Profile() {
   }
   return (
     <>
-      <h1 className="m-3">Profile</h1>
+      <h1 className="m-3 text-white">Profile</h1>
       <Container>
         <Row>
           <Col>
-            <Card style={{ height: 200, width: 600 }}>
+            <Card style={{ height: 200, width: 600 }} className="bg-secondary">
               <Row>
                 <Col xs={6} md={4}>
                   <Image src={profile.photo} height="150px" width="150px" className="m-3" roundedCircle />
@@ -26,16 +26,15 @@ function Profile() {
                   <Card.Title className="mt-5">
                     {profile.firstName} {profile.lastName}
                   </Card.Title>
-                  <Card.Text className="text-muted">{profile.email} </Card.Text>
+                  <Card.Text className="text-white">{profile.email} </Card.Text>
                 </Col>
-                <Button onClick={editProfile}>Edit</Button>
               </Row>
             </Card>
           </Col>
         </Row>
-        <Row>
+        <Col>
           <Likes />
-        </Row>
+        </Col>
       </Container>
     </>
   )
