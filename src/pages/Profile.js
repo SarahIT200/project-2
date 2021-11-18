@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { Card, Col, Container, Image, Row, Button } from "react-bootstrap"
 import AnimeCard from "../components/AnimeCard"
 import EditProfile from "../components/EditProfile"
+import Likes from "../components/Likes"
 import AnimeContext from "../utils/AnimeContext"
 
 function Profile() {
@@ -33,7 +34,7 @@ function Profile() {
           </Col>
         </Row>
         <Row>
-          <Col>{<AnimeCard />}</Col>
+          <Likes />
         </Row>
       </Container>
     </>

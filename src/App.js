@@ -13,6 +13,7 @@ import AnimeCard from "./components/AnimeCard"
 function App() {
   const [animes, setAnime] = useState([])
   const [profile, setProfile] = useState(null)
+  const [likes, setLikes] = useState([])
   const navigate = useNavigate()
   //profile
   const getProfile = async () => {
@@ -63,6 +64,7 @@ function App() {
   //use Effict
   useEffect(() => {
     getAnime()
+    getLike()
     if (localStorage.projectToken) {
       getProfile()
     }
@@ -111,7 +113,7 @@ function App() {
     localStorage.removeItem("projectToken")
   }
   //private API
-  //like to post item from public API to private
+  //-function like- to post item from public API to private
   const like = async (e, id) => {
     console.log(id)
     try {
@@ -132,6 +134,18 @@ function App() {
       console.log(error?.response?.data)
     }
   }
+
+  //get
+  const getLike = async () => {
+    try {
+      const response = await axios.get("https://vast-chamber-06347.herokuapp.com/api/v2/testProject/items")
+      setLikes(response.data)
+      console.log(likes)
+    } catch (error) {
+      console.log(error?.response?.data)
+    }
+  }
+
   //context value
   const store = {
     animes: animes,
@@ -143,6 +157,7 @@ function App() {
     editProfile: editProfile,
     confirmProfile: confirmProfile,
     like: like,
+    likes: likes,
   }
   return (
     <AnimeContext.Provider value={store}>
