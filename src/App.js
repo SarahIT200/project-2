@@ -111,17 +111,19 @@ function App() {
     localStorage.removeItem("projectToken")
   }
   //private API
+  //like to post item from public API to private
   const like = async (e, id) => {
     console.log(id)
     try {
       const animeFound = animes.find(anime => anime.mal_id === id)
 
       const likeBody = {
-        title: animeFound.anime.title,
+        title: animeFound.title,
         image: animeFound.image_url,
         url: animeFound.url,
       }
-      await axios.post(`https://vast-chamber-06347.herokuapp.com/api/v2/testProject/items/${id}`, likeBody, {
+      console.log(likeBody)
+      await axios.post(`https://vast-chamber-06347.herokuapp.com/api/v2/testProject/items`, likeBody, {
         headers: {
           Authorization: localStorage.projectToken,
         },
