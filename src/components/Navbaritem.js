@@ -1,7 +1,10 @@
+import { useContext } from "react"
 import { Container, Nav, Navbar } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import AnimeContext from "../utils/AnimeContext"
 
 function NavbarItem() {
+  const { logout } = useContext(AnimeContext)
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="sticky-top">
       <Container>
@@ -11,12 +14,25 @@ function NavbarItem() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
-            <Link to="/signup" className="nav-link">
-              Sign Up
-            </Link>
-            <Link eventKey={2} to="/login" className="nav-link">
-              Login
-            </Link>
+            {localStorage.projectToken ? (
+              <>
+                <Link to="/profile" className="nav-link">
+                  Profile
+                </Link>
+                <Link eventKey={2} to="/" className="nav-link" onClick={logout}>
+                  logout
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to="/signup" className="nav-link">
+                  Sign Up
+                </Link>
+                <Link eventKey={2} to="/login" className="nav-link">
+                  Login
+                </Link>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
