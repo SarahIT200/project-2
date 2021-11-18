@@ -7,10 +7,26 @@ import { useState, useEffect } from "react"
 import AnimeContext from "./utils/AnimeContext"
 import Anime from "./pages/Anime"
 import Home from "./pages/Home"
+import Profile from "./pages/Profile"
 
 function App() {
   const [animes, setAnime] = useState([])
+  const [profile, setProfile] = useState(null)
   const navigate = useNavigate()
+
+  const getProfile = async () => {
+    try {
+      const response = await axios.get("https://vast-chamber-06347.herokuapp.com/api/user/me", {
+        headers: {
+          Authorization: localStorage.projectToken,
+        },
+      })
+      setProfile(response.data)
+      console.log(profile)
+    } catch (error) {
+      console.log(error?.response?.data)
+    }
+  }
 
   const getAnime = async () => {
     try {
@@ -23,6 +39,9 @@ function App() {
 
   useEffect(() => {
     getAnime()
+    if (localStorage.projectToken) {
+      getProfile()
+    }
   }, [])
 
   const signup = async e => {
@@ -53,6 +72,7 @@ function App() {
       }
       const response = await axios.post("https://vast-chamber-06347.herokuapp.com/api/user/auth", userBody)
       localStorage.projectToken = response.data
+      getProfile()
       navigate("/")
     } catch (error) {
       console.log(error?.response?.data)
@@ -68,6 +88,8 @@ function App() {
     signup: signup,
     login: login,
     logout: logout,
+    getProfile: getProfile,
+    profile: profile,
   }
   return (
     <AnimeContext.Provider value={store}>
@@ -78,6 +100,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/animes" element={<Anime />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </AnimeContext.Provider>
   )

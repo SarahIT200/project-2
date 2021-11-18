@@ -1,7 +1,6 @@
 import { useContext } from "react"
 import { Form, Button } from "react-bootstrap"
 import AnimeContext from "../utils/AnimeContext"
-
 function Signup() {
   const { signup } = useContext(AnimeContext)
   return (
