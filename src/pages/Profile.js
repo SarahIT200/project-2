@@ -1,9 +1,11 @@
 import { useContext } from "react"
 import { Card, Col, Container, Image, Row, Button } from "react-bootstrap"
+import AnimeCard from "../components/AnimeCard"
+import EditProfile from "../components/EditProfile"
 import AnimeContext from "../utils/AnimeContext"
 
 function Profile() {
-  const { profile } = useContext(AnimeContext)
+  const { profile, editProfile } = useContext(AnimeContext)
 
   if (!profile) {
     return <h1>Loading...</h1>
@@ -29,6 +31,9 @@ function Profile() {
               </Row>
             </Card>
           </Col>
+        </Row>
+        <Row>
+          <Col>{<AnimeCard />}</Col>
         </Row>
       </Container>
     </>

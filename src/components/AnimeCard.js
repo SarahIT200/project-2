@@ -1,7 +1,10 @@
-import { Card, Col, ListGroup, ListGroupItem } from "react-bootstrap"
+import { useContext } from "react"
+import { Card, Col, ListGroup, ListGroupItem, Button } from "react-bootstrap"
+import AnimeContext from "../utils/AnimeContext"
 
 function AnimeCard(props) {
   const { anime } = props
+  const { like } = useContext(AnimeContext)
 
   return (
     <Col>
@@ -17,6 +20,7 @@ function AnimeCard(props) {
             </ListGroupItem>
           </ListGroup>
         </Card.Body>
+        <Button onClick={e => like(e, anime.mal_id)}>like</Button>
       </Card>
     </Col>
   )

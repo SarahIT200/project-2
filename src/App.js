@@ -8,12 +8,13 @@ import AnimeContext from "./utils/AnimeContext"
 import Anime from "./pages/Anime"
 import Home from "./pages/Home"
 import Profile from "./pages/Profile"
+import AnimeCard from "./components/AnimeCard"
 
 function App() {
   const [animes, setAnime] = useState([])
   const [profile, setProfile] = useState(null)
   const navigate = useNavigate()
-
+  //profile
   const getProfile = async () => {
     try {
       const response = await axios.get("https://vast-chamber-06347.herokuapp.com/api/user/me", {
@@ -22,12 +23,34 @@ function App() {
         },
       })
       setProfile(response.data)
-      console.log(profile)
+      console.log("profile:", profile)
+    } catch (error) {
+      console.log(error?.response?.data)
+    }
+  }
+  const editProfile = async e => {}
+
+  const confirmProfile = async e => {
+    e.preventDefault()
+    const form = e.target
+    try {
+      const profileBody = {
+        firstName: form.elements.firstName.value,
+        lastName: form.elements.lastName.value,
+        email: form.elements.email.value,
+        photo: form.elements.photo.value,
+      }
+      await axios.put("https://vast-chamber-06347.herokuapp.com/api/user/me", profileBody, {
+        headers: {
+          Authorization: localStorage.projectToken,
+        },
+      })
     } catch (error) {
       console.log(error?.response?.data)
     }
   }
 
+  //puplic API
   const getAnime = async () => {
     try {
       const response = await axios.get("https://api.jikan.moe/v3/top/anime")
@@ -37,6 +60,7 @@ function App() {
     }
   }
 
+  //use Effict
   useEffect(() => {
     getAnime()
     if (localStorage.projectToken) {
@@ -44,6 +68,7 @@ function App() {
     }
   }, [])
 
+  //register
   const signup = async e => {
     e.preventDefault()
     const form = e.target
@@ -56,6 +81,7 @@ function App() {
         photo: form.elements.photo.value,
       }
       await axios.post("https://vast-chamber-06347.herokuapp.com/api/user", userBody)
+      getAnime()
       navigate("/login")
     } catch (error) {
       console.log(error?.response?.data)
@@ -72,6 +98,7 @@ function App() {
       }
       const response = await axios.post("https://vast-chamber-06347.herokuapp.com/api/user/auth", userBody)
       localStorage.projectToken = response.data
+      getAnime()
       getProfile()
       navigate("/")
     } catch (error) {
@@ -79,10 +106,31 @@ function App() {
     }
   }
 
+  //logout
   const logout = () => {
     localStorage.removeItem("projectToken")
   }
+  //private API
+  const like = async (e, id) => {
+    console.log(id)
+    try {
+      const animeFound = animes.find(anime => anime.mal_id === id)
 
+      const likeBody = {
+        title: animeFound.anime.title,
+        image: animeFound.image_url,
+        url: animeFound.url,
+      }
+      await axios.post(`https://vast-chamber-06347.herokuapp.com/api/v2/testProject/items/${id}`, likeBody, {
+        headers: {
+          Authorization: localStorage.projectToken,
+        },
+      })
+    } catch (error) {
+      console.log(error?.response?.data)
+    }
+  }
+  //context value
   const store = {
     animes: animes,
     signup: signup,
@@ -90,11 +138,13 @@ function App() {
     logout: logout,
     getProfile: getProfile,
     profile: profile,
+    editProfile: editProfile,
+    confirmProfile: confirmProfile,
+    like: like,
   }
   return (
     <AnimeContext.Provider value={store}>
       <Navbaritem />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
