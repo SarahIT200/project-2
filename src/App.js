@@ -24,6 +24,7 @@ function App() {
         },
       })
       setProfile(response.data)
+      getLike()
       console.log("profile:", profile)
     } catch (error) {
       console.log(error?.response?.data)
@@ -102,6 +103,7 @@ function App() {
       localStorage.projectToken = response.data
       getAnime()
       getProfile()
+      getLike()
       navigate("/")
     } catch (error) {
       console.log(error?.response?.data)
@@ -141,6 +143,7 @@ function App() {
       const response = await axios.get("https://vast-chamber-06347.herokuapp.com/api/v2/testProject/items")
       setLikes(response.data)
       console.log(likes)
+      getProfile()
     } catch (error) {
       console.log(error?.response?.data)
     }
@@ -155,6 +158,7 @@ function App() {
       })
       getAnime()
       getProfile()
+      getLike()
       console.log("delete success")
     } catch (error) {
       console.log(error.response.data)
