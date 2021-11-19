@@ -127,7 +127,7 @@ function App() {
         url: animeFound.url,
       }
       console.log(likeBody)
-      await axios.post(`https://vast-chamber-06347.herokuapp.com/api/v2/testProject/items`, likeBody, {
+      await axios.post(`https://vast-chamber-06347.herokuapp.com/api/v2/anime-725/items`, likeBody, {
         headers: {
           Authorization: localStorage.projectToken,
         },
@@ -140,7 +140,7 @@ function App() {
   //get
   const getLike = async () => {
     try {
-      const response = await axios.get("https://vast-chamber-06347.herokuapp.com/api/v2/testProject/items")
+      const response = await axios.get("https://vast-chamber-06347.herokuapp.com/api/v2/anime-725/items")
       setLikes(response.data)
       console.log(likes)
       getProfile()
@@ -151,7 +151,7 @@ function App() {
   //delete like
   const deleteLike = async id => {
     try {
-      await axios.delete(`https://vast-chamber-06347.herokuapp.com/api/v2/testProject/items/${id}`, {
+      await axios.delete(`https://vast-chamber-06347.herokuapp.com/api/v2/anime-725/items/${id}`, {
         headers: {
           Authorization: localStorage.projectToken,
         },
