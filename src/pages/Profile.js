@@ -1,12 +1,13 @@
 import { useContext } from "react"
-import { Card, Col, Container, Image, Row, Button } from "react-bootstrap"
+import { Card, Col, Container, Image, Row, Button, ButtonGroup, Alert } from "react-bootstrap"
 import AnimeCard from "../components/AnimeCard"
 import EditProfile from "../components/EditProfile"
 import Likes from "../components/Likes"
+import Note from "../components/Note"
 import AnimeContext from "../utils/AnimeContext"
 
 function Profile() {
-  const { profile, editProfile } = useContext(AnimeContext)
+  const { profile, notes } = useContext(AnimeContext)
 
   if (!profile) {
     return <h1>Loading...</h1>
@@ -30,6 +31,24 @@ function Profile() {
                 </Col>
               </Row>
             </Card>
+          </Col>
+          <Col className="ms-5">
+            <h1>Note:</h1>
+            <Note />
+            <ul>
+              <Alert variant="success">
+                <Alert.Heading>Hey, nice to see you</Alert.Heading>
+                <p>{notes}</p>
+              </Alert>
+              {/* {
+                (notes.map = note => (
+                  <li>
+                    {note}
+                    <Button>Edit</Button>
+                  </li>
+                ))
+              } */}
+            </ul>
           </Col>
         </Row>
         <Col>

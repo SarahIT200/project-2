@@ -14,6 +14,8 @@ function App() {
   const [animes, setAnime] = useState([])
   const [profile, setProfile] = useState(null)
   const [likes, setLikes] = useState([])
+  const [notes, setNotes] = useState([])
+  const [text, setText] = useState("")
   const navigate = useNavigate()
   //profile
   const getProfile = async () => {
@@ -164,6 +166,11 @@ function App() {
       console.log(error.response.data)
     }
   }
+  //NOTE
+  const addNote = () => {
+    setNotes([...notes, text])
+  }
+
   //context value
   const store = {
     animes: animes,
@@ -177,6 +184,11 @@ function App() {
     like: like,
     likes: likes,
     deleteLike: deleteLike,
+    addNote: addNote,
+    notes: notes,
+    text: text,
+    setText: setText,
+    setNotes: setNotes,
   }
   return (
     <AnimeContext.Provider value={store}>
