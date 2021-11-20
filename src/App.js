@@ -17,6 +17,7 @@ function App() {
   const [notes, setNotes] = useState([])
   const [text, setText] = useState("")
   const navigate = useNavigate()
+
   //profile
   const getProfile = async () => {
     try {

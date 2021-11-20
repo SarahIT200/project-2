@@ -19,9 +19,11 @@ function AnimeCard(props) {
               <Card.Link href={anime.url} className="text-decoration-none text-secondary">
                 Watch
               </Card.Link>
-              <Button onClick={e => like(e, anime.mal_id)} style={{ width: 80 }} className="ms-4">
-                like
-              </Button>
+              {localStorage.projectToken ? (
+                <Button onClick={e => like(e, anime.mal_id)} style={{ width: 80 }} className="ms-4">
+                  like
+                </Button>
+              ) : null}
             </ListGroupItem>
           </ListGroup>
         </Card.Body>

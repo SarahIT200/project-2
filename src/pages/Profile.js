@@ -7,7 +7,7 @@ import Note from "../components/Note"
 import AnimeContext from "../utils/AnimeContext"
 
 function Profile() {
-  const { profile, notes } = useContext(AnimeContext)
+  const { profile } = useContext(AnimeContext)
 
   if (!profile) {
     return <h1>Loading...</h1>
