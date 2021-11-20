@@ -17,29 +17,7 @@ function NavbarItem() {
           ANIMAE
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto">
-            {localStorage.projectToken ? (
-              <>
-                <Link to="/profile" className="nav-link">
-                  Profile
-                </Link>
-                <Link eventKey={2} to="/" className="nav-link" onClick={logout}>
-                  logout
-                </Link>
-              </>
-            ) : (
-              <>
-                <Link to="/signup" className="nav-link">
-                  Sign Up
-                </Link>
-                <Link eventKey={2} to="/login" className="nav-link">
-                  Login
-                </Link>
-              </>
-            )}
-          </Nav>
-        </Navbar.Collapse>
+        <Navbar.Collapse id="responsive-navbar-nav"></Navbar.Collapse>
       </Container>
     </Navbar>
   )

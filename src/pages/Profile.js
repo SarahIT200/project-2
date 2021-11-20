@@ -6,7 +6,7 @@ import Likes from "../components/Likes"
 import Note from "../components/Note"
 import AnimeContext from "../utils/AnimeContext"
 
-function Profile() {
+function Profile(props) {
   const { profile } = useContext(AnimeContext)
 
   if (!profile) {

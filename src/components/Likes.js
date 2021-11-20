@@ -9,7 +9,9 @@ function Likes() {
   return (
     <>
       <Container>
-        <h1 className="text-white mt-5">My Favorite</h1>
+        <div className="mt-5">
+          <h3 className="text-white">My Favorite</h3>
+        </div>
         <Row className="mt-5 g-3 my-5" xs={1} sm={2} md={4}>
           {likes.map(like => (
             <Col className="me-5">
@@ -34,6 +36,3 @@ function Likes() {
 }
 
 export default Likes
-
-{
-}

@@ -8,7 +8,6 @@ import AnimeContext from "./utils/AnimeContext"
 import Anime from "./pages/Anime"
 import Home from "./pages/Home"
 import Profile from "./pages/Profile"
-import AnimeCard from "./components/AnimeCard"
 
 function App() {
   const [animes, setAnime] = useState([])
