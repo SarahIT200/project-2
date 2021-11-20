@@ -14,11 +14,11 @@ function Profile() {
   }
   return (
     <>
-      <h1 className="m-3 text-white">Profile</h1>
+      <h1 className="m-5 text-white">Profile</h1>
       <Container>
         <Row>
           <Col>
-            <Card style={{ height: 200, width: 600 }} className="bg-secondary">
+            <Card style={{ height: 200, width: 600 }} className="bg-warning">
               <Row>
                 <Col xs={6} md={4}>
                   <Image src={profile.photo} height="150px" width="150px" className="m-3" roundedCircle />
@@ -32,7 +32,7 @@ function Profile() {
               </Row>
             </Card>
           </Col>
-          <Col className="ms-5">
+          {/* <Col className="ms-5">
             <h1>Note:</h1>
             <Note />
             <ul>
@@ -40,16 +40,16 @@ function Profile() {
                 <Alert.Heading>Hey, nice to see you</Alert.Heading>
                 <p>{notes}</p>
               </Alert>
-              {/* {
+              {
                 (notes.map = note => (
                   <li>
                     {note}
                     <Button>Edit</Button>
                   </li>
                 ))
-              } */}
+              }
             </ul>
-          </Col>
+          </Col> */}
         </Row>
         <Col>
           <Likes />

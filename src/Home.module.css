@@ -15,14 +15,14 @@ html body {
 .btn1 {
     position: absolute;
     margin: 30px;
-    bottom: 150px;
+    bottom: 180px;
     right: 220px;
     width: 300px;
     height: 100px;
     color: white;
     font-size: 50px;
-    /* background-color: black; */
-    background-image: url("https://i.pinimg.com/564x/b3/99/55/b399556ab83fb5f39969a77040e4d8af.jpg");
+    background-image: url("https://i.pinimg.com/564x/d3/66/6c/d3666cd4f0d98d5d476b22ddaa704ad1.jpg");
+    background-position: bottom;
     background-size: cover;
     border-radius: 40px;
 }
@@ -30,7 +30,23 @@ html body {
 .btn2 {
     position: absolute;
     margin: 30px;
-    bottom: 350px;
+    bottom: 300px;
+    right: 220px;
+    width: 300px;
+    height: 100px;
+    color: white;
+    font-size: 50px;
+    /* background-color: black; */
+    background-image: url("https://i.pinimg.com/564x/d3/66/6c/d3666cd4f0d98d5d476b22ddaa704ad1.jpg");
+    background-size: 300px;
+    background-position: center;
+    border-radius: 40px;
+}
+
+.btn3 {
+    position: absolute;
+    margin: 30px;
+    bottom: 430px;
     right: 220px;
     width: 300px;
     height: 100px;

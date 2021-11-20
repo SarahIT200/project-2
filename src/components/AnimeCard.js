@@ -8,14 +8,14 @@ function AnimeCard(props) {
 
   return (
     <Col>
-      <Card style={{ height: "35rem" }} className="bg-info">
+      <Card style={{ height: "35rem" }}>
         <Card.Img variant="top" src={anime.image_url} height="400px" />
         <Card.Body>
           <Card.Title>Name:{anime.title}</Card.Title>
         </Card.Body>
         <Card.Body>
           <ListGroup className="list-group-flush ">
-            <ListGroupItem className="bg-info ">
+            <ListGroupItem>
               <Card.Link href={anime.url} className="text-decoration-none text-secondary">
                 Watch
               </Card.Link>

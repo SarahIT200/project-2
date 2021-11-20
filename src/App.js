@@ -142,7 +142,11 @@ function App() {
   //get
   const getLike = async () => {
     try {
-      const response = await axios.get("https://vast-chamber-06347.herokuapp.com/api/v2/anime-725/items")
+      const response = await axios.get(`https://vast-chamber-06347.herokuapp.com/api/v2/anime-725/items`, {
+        headers: {
+          Authorization: localStorage.projectToken,
+        },
+      })
       setLikes(response.data)
       console.log(likes)
       getProfile()
