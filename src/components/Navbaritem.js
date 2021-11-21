@@ -9,7 +9,7 @@ function NavbarItem() {
   return (
     <navbar className={Styles.navbar}>
       <>
-        <Link to="/" className="navbar-brand">
+        <Link to="/" className="navbar-brand text-white">
           {/* <Image
             src="https://i.pinimg.com/564x/bf/ca/2c/bfca2c24bee2349809f7372c709d98d7.jpg"
             height="70px"
@@ -22,12 +22,12 @@ function NavbarItem() {
         {localStorage.projectToken ? (
           <>
             <li>
-              <Link to="/profile" className="nav-link">
+              <Link to="/profile" className="nav-link text-white">
                 Profile
               </Link>
             </li>
             <li>
-              <Link to="/" onClick={logout} className="nav-link">
+              <Link to="/" onClick={logout} className="nav-link text-white">
                 Logout
               </Link>
             </li>
@@ -35,12 +35,12 @@ function NavbarItem() {
         ) : (
           <>
             <li>
-              <Link to="/login" className="nav-link">
+              <Link to="/login" className="nav-link text-white">
                 Sign Up
               </Link>
             </li>
             <li>
-              <Link to="/" className="nav-link">
+              <Link to="/" className="nav-link text-white">
                 Login
               </Link>
             </li>

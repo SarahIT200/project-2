@@ -5,13 +5,13 @@ import { Card, Col, Container, Row, Button } from "react-bootstrap"
 import AnimeContext from "../utils/AnimeContext"
 
 function Likes(props) {
-  const { like } = props
   const { likes, deleteLike } = useContext(AnimeContext)
+  const { like } = props
   return (
     <>
       <Container>
         {/* {likes.map(like => ( */}
-        <Col className="me-5">
+        <Col className="me-3">
           <Card style={{ width: 200 }}>
             <Card.Img variant="top" src={like.image} height="150px" />
             <Card.Body>

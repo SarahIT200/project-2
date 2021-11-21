@@ -6,6 +6,9 @@
 .navbar {
     display: flex;
     justify-content: space-around;
+    background-color: black;
+    /* background-color: #0D6EFD; */
+
 
 }
 
@@ -14,9 +17,10 @@
     justify-content: space-between;
     list-style: none;
     padding: auto;
+    padding-left: 900px;
+    margin-top: 20px;
+
 
 }
 
-.navbar ul li {
-    color: black;
-}
+.navbar ul li {}

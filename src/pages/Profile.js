@@ -16,20 +16,20 @@ function Profile(props) {
   const mylikes = likes.filter(like => like._user._id === profile._id)
   return (
     <>
-      <h1 className="m-5 text-white">Profile</h1>
+      <h1 className="m-5 text-dark">Profile:</h1>
       <Container>
         <Row>
           <Col>
-            <Card style={{ height: 200, width: 600 }} className="bg-warning">
+            <Card style={{ height: 200, width: 600 }} className="bg-dark">
               <Row>
                 <Col xs={6} md={4}>
                   <Image src={profile.photo} height="150px" width="150px" className="m-3" roundedCircle />
                 </Col>
                 <Col>
-                  <Card.Title className="mt-5">
+                  <Card.Title className="mt-5 text-light">
                     {profile.firstName} {profile.lastName}
                   </Card.Title>
-                  <Card.Text className="text-white">{profile.email} </Card.Text>
+                  <Card.Text className="text-light">{profile.email} </Card.Text>
                 </Col>
               </Row>
             </Card>
@@ -54,8 +54,8 @@ function Profile(props) {
           </Col> */}
         </Row>
 
-        <h3 className="text-white">My Favorite</h3>
-        <Row className="mt-5 g-3 my-5" xs={1} sm={2} md={4}>
+        <h3 className="text-dark mt-5">My Favorite:</h3>
+        <Row className="mt-5" xs={1} sm={2} md={4}>
           {mylikes.map(like => (
             <Likes like={like} />
           ))}

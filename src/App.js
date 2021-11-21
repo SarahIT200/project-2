@@ -27,7 +27,7 @@ function App() {
       })
       setProfile(response.data)
       getLike()
-      console.log("profile:", profile)
+      // console.log("profile:", profile)
     } catch (error) {
       console.log(error?.response?.data)
     }
@@ -67,9 +67,10 @@ function App() {
   //use Effict
   useEffect(() => {
     getAnime()
-    getLike()
+
     if (localStorage.projectToken) {
       getProfile()
+      getLike()
     }
   }, [])
 
