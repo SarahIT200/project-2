@@ -16,7 +16,7 @@ function Home() {
   return (
     <>
       <CaresouselItem CarouselPic={CarouselPic} />
-      <div className={Styles.btnContainer} inhome={false}>
+      <div className={Styles.btnContainer}>
         {!localStorage.projectToken ? (
           <>
             <Link to="/login">

@@ -1,0 +1,15 @@
+.btnLike {
+    position: relative;
+    bottom: -50px;
+    right: -180px;
+}
+
+.text {
+    position: relative;
+    bottom: -50px;
+    color: rgb(226, 184, 68);
+}
+
+.text:hover {
+    color: white;
+}

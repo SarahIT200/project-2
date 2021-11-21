@@ -14,10 +14,19 @@ function NavbarItem() {
             height="70px"
             className="me-2"
           />
-          ANIMAE
+          <span className="text-warning">ANIMAE</span>
         </Link>
-        
-
+        {localStorage.projectToken ? (
+          <>
+            <Link>Profile</Link>
+            <Link>Logout</Link>
+          </>
+        ) : (
+          <>
+            <Link>Sign Up</Link>
+            <Link>Login</Link>
+          </>
+        )}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav"></Navbar.Collapse>
       </Container>
