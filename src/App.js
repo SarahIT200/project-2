@@ -8,6 +8,7 @@ import AnimeContext from "./utils/AnimeContext"
 import Anime from "./pages/Anime"
 import Home from "./pages/Home"
 import Profile from "./pages/Profile"
+import OneAnime from "./pages/OneAnime"
 
 function App() {
   const [animes, setAnime] = useState([])
@@ -203,6 +204,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/animes" element={<Anime />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/one-anime/:animeId" element={<OneAnime />} />
       </Routes>
     </AnimeContext.Provider>
   )

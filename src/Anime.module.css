@@ -2,19 +2,25 @@
     position: relative;
     bottom: -50px;
     right: -150px;
-    background-color: white;
+    background-color: black;
     border: 1px solid white;
-    color: black;
+    color: white;
     border-radius: 5px;
     width: 40px;
+}
+
+.btnLike:hover {
+
+    background-color: rgb(82, 76, 76);
 }
 
 .text {
     position: relative;
     bottom: -50px;
-    color: white
+    color: black
 }
 
 .text:hover {
     color: rgb(82, 76, 76);
+    text-decoration: none;
 }
