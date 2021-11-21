@@ -15,7 +15,9 @@ function AnimeCard(props) {
           <Card.Img variant="top" src={anime.image_url} height="180px" className="mt-3" />
         </Link>
         <Card.Body>
-          <Card.Text className=" text-dark text-left text-nowrap text-sm-left ">Name: {anime.title}</Card.Text>
+          <Card.Text className="d-inline-block text-dark text-nowrap text-sm-left text-truncate" style={{ width: 200 }}>
+            Name: {anime.title}
+          </Card.Text>
 
           <Card.Link href={anime.url} className="text-dark d-block " className={Styles.text}>
             Watch
