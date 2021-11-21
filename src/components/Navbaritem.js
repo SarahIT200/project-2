@@ -9,7 +9,7 @@ function NavbarItem() {
   return (
     <navbar className={Styles.navbar}>
       <>
-        <Link to="/" className="navbar-brand text-white">
+        <Link to="/" className="navbar-brand text-white mt-3">
           {/* <Image
             src="https://i.pinimg.com/564x/bf/ca/2c/bfca2c24bee2349809f7372c709d98d7.jpg"
             height="70px"

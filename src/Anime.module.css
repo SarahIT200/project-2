@@ -17,7 +17,7 @@
 .text {
     position: relative;
     bottom: -50px;
-    color: black
+    color: black;
 }
 
 .text:hover {

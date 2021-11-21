@@ -10,13 +10,16 @@ function AnimeCard(props) {
 
   return (
     <>
-      <Card className="bg-white  ms-5 mb-5" style={{ height: 350, width: 300 }}>
+      <Card className="bg-light  ms-5 mb-5" style={{ height: 350, width: 300 }}>
         <Link to={`/one-anime/${anime.mal_id}`}>
           <Card.Img variant="top" src={anime.image_url} height="180px" className="mt-3" />
         </Link>
         <Card.Body>
-          <Card.Text className="d-inline-block text-dark text-nowrap text-sm-left text-truncate" style={{ width: 200 }}>
-            Name: {anime.title}
+          <Card.Text
+            className="d-inline-block text-dark text-nowrap text-sm-left text-truncate font-weight-bold"
+            style={{ width: 200 }}
+          >
+            {anime.title}
           </Card.Text>
 
           <Card.Link href={anime.url} className="text-dark d-block " className={Styles.text}>
