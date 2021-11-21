@@ -19,4 +19,17 @@
 
 }
 
-.navbar ul li {}
+.new {
+    position: absolute;
+    text-decoration: none;
+    left: 200px;
+    top: 25px;
+    color: white;
+}
+
+.new:hover {
+    color: white;
+}
+
+/* 
+.navbar ul li {} */

@@ -6,8 +6,8 @@ import Likes from "../components/Likes"
 import Note from "../components/Note"
 import AnimeContext from "../utils/AnimeContext"
 
-function Profile(props) {
-  const { profile, likes } = useContext(AnimeContext)
+function Profile() {
+  const { profile, likes, notes } = useContext(AnimeContext)
 
   if (!profile) {
     return <h1>Loading...</h1>
@@ -34,24 +34,24 @@ function Profile(props) {
               </Row>
             </Card>
           </Col>
-          {/* <Col className="ms-5">
-            <h1>Note:</h1>
-            <Note />
-            <ul>
-              <Alert variant="success">
-                <Alert.Heading>Hey, nice to see you</Alert.Heading>
-                <p>{notes}</p>
-              </Alert>
-              {
-                (notes.map = note => (
-                  <li>
-                    {note}
-                    <Button>Edit</Button>
-                  </li>
-                ))
-              }
-            </ul>
-          </Col> */}
+          {
+            <Col className="ms-5">
+              <h1>Note:</h1>
+              <Note />
+              <ul>
+                <Alert variant="success">
+                  <Alert.Heading>Hey, nice to see you</Alert.Heading>
+
+                  {notes.map(note => (
+                    <li>
+                      {note}
+                      <Button>Edit</Button>
+                    </li>
+                  ))}
+                </Alert>
+              </ul>
+            </Col>
+          }
         </Row>
 
         <h3 className="text-dark mt-5">My Favorite:</h3>

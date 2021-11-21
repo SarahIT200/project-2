@@ -28,6 +28,7 @@ function App() {
       })
       setProfile(response.data)
       getLike()
+
       console.log("profile:", profile)
     } catch (error) {
       console.log(error?.response?.data)
@@ -68,7 +69,7 @@ function App() {
   //use Effict
   useEffect(() => {
     getAnime()
-
+    addNote()
     if (localStorage.projectToken) {
       getProfile()
       getLike()
@@ -173,7 +174,15 @@ function App() {
   }
   //NOTE
   const addNote = () => {
+    localStorage.setItem("notes", JSON.stringify(notes))
+    setText("")
     setNotes([...notes, text])
+    const noteA = localStorage.getItem("notes")
+    if (noteA) {
+      return JSON.parse(noteA)
+    } else {
+      return []
+    }
   }
 
   //context value
