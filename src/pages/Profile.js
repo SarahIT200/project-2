@@ -7,11 +7,13 @@ import Note from "../components/Note"
 import AnimeContext from "../utils/AnimeContext"
 
 function Profile(props) {
-  const { profile } = useContext(AnimeContext)
+  const { profile, likes } = useContext(AnimeContext)
 
   if (!profile) {
     return <h1>Loading...</h1>
   }
+
+  const mylikes = likes.filter(like => like._user._id === profile._id)
   return (
     <>
       <h1 className="m-5 text-white">Profile</h1>
@@ -51,9 +53,13 @@ function Profile(props) {
             </ul>
           </Col> */}
         </Row>
-        <Col>
-          <Likes />
-        </Col>
+
+        <h3 className="text-white">My Favorite</h3>
+        <Row className="mt-5 g-3 my-5" xs={1} sm={2} md={4}>
+          {mylikes.map(like => (
+            <Likes like={like} />
+          ))}
+        </Row>
       </Container>
     </>
   )
