@@ -16,8 +16,7 @@ function NavbarItem() {
           />
           ANIMAE
         </Link>
-        <Link>Sign Up</Link>
-        <Link>Login</Link>
+        
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav"></Navbar.Collapse>
