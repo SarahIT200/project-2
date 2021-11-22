@@ -183,6 +183,8 @@ function App() {
     } else {
       return []
     }
+
+    localStorage.noteA = notes
   }
 
   //context value

@@ -38,7 +38,7 @@ function Profile() {
             <Col className="ms-5">
               <h1>Note:</h1>
               <Note />
-              <ul>
+              {/* <ul>
                 <Alert variant="success">
                   <Alert.Heading>Hey, nice to see you</Alert.Heading>
 
@@ -49,7 +49,7 @@ function Profile() {
                     </li>
                   ))}
                 </Alert>
-              </ul>
+              </ul> */}
             </Col>
           }
         </Row>
