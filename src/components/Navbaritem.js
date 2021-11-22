@@ -35,12 +35,12 @@ function NavbarItem() {
         ) : (
           <>
             <li>
-              <Link to="/login" className="nav-link text-white">
+              <Link to="/signup" className="nav-link text-white">
                 Sign Up
               </Link>
             </li>
             <li>
-              <Link to="/" className="nav-link text-white">
+              <Link to="/login" className="nav-link text-white">
                 Login
               </Link>
             </li>
