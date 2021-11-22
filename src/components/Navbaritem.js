@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 import AnimeContext from "../utils/AnimeContext"
 import Styles from "../navbar.module.css"
 import OneAnime from "../pages/OneAnime"
-
 function NavbarItem(props) {
   const { logout } = useContext(AnimeContext)
   const { inAnime } = props
@@ -27,7 +26,6 @@ function NavbarItem(props) {
           /> */}
             <span>ANIMAE</span>
           </Link>
-
           <ul>
             {localStorage.projectToken ? (
               <>
@@ -62,5 +60,4 @@ function NavbarItem(props) {
     </navbar>
   )
 }
-
 export default NavbarItem

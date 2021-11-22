@@ -11,7 +11,7 @@ function Likes(props) {
     <>
       <Container>
         {/* {likes.map(like => ( */}
-        <Col className="me-3">
+        <Col className="m-3">
           <Card style={{ width: 200 }}>
             <Card.Img variant="top" src={like.image} height="150px" />
             <Card.Body>

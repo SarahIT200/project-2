@@ -55,7 +55,7 @@ function Profile() {
         </Row>
 
         <h3 className="text-dark mt-5">My Favorite:</h3>
-        <Row className="mt-5" xs={1} sm={2} md={4}>
+        <Row className="m-5" xs={1} sm={2} md={4}>
           {mylikes.map(like => (
             <Likes like={like} />
           ))}
