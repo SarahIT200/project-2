@@ -1,9 +1,9 @@
-import { useContext, useState } from "react"
-import { Button, Modal } from "react-bootstrap"
+import { useContext, useEffect, useState } from "react"
+import { Button, Col, Form, Modal } from "react-bootstrap"
 import AnimeContext from "../utils/AnimeContext"
 
 function Note() {
-  const { setNote, text, setText, addNote } = useContext(AnimeContext)
+  const { addNote } = useContext(AnimeContext)
 
   const [show, setShow] = useState(false)
 
@@ -12,23 +12,36 @@ function Note() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="dark" onClick={handleShow}>
         Add note
       </Button>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>NOTE</Modal.Title>
         </Modal.Header>
-        <Modal.Body></Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
+        <Modal.Body>
+          <Form className=" text-white me-5 ms-5" onSubmit={e => addNote(e)}>
+            <Form.Group as="Row" className="mb-3" controlId="formBasicEmail">
+              <Form.Label className="text-black">Title:</Form.Label>
+              <Col md="6">
+                <Form.Control type="text" name="title" />
+              </Col>
+            </Form.Group>
+
+            <Form.Group as="Row" className="mb-3" controlId="formBasicPassword">
+              <Col>
+                <Form.Label className="text-black">Episode:</Form.Label>
+              </Col>
+              <Col md="6">
+                <Form.Control type="number" name="episode" />
+              </Col>
+            </Form.Group>
+            <Button variant="dark" onClick={handleClose} type="submit">
+              Add
+            </Button>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer></Modal.Footer>
       </Modal>
     </>
   )

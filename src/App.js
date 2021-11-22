@@ -9,13 +9,13 @@ import Anime from "./pages/Anime"
 import Home from "./pages/Home"
 import Profile from "./pages/Profile"
 import OneAnime from "./pages/OneAnime"
+import "./App.css"
 
 function App() {
   const [animes, setAnime] = useState([])
   const [profile, setProfile] = useState(null)
   const [likes, setLikes] = useState([])
-  const [notes, setNotes] = useState([])
-  const [text, setText] = useState("")
+  const [notes, setNotes] = useState(JSON.parse(localStorage.notes))
   const navigate = useNavigate()
 
   //profile
@@ -69,7 +69,7 @@ function App() {
   //use Effict
   useEffect(() => {
     getAnime()
-    addNote()
+    // setNotes(JSON.parse(localStorage.notes))
     if (localStorage.projectToken) {
       getProfile()
       getLike()
@@ -172,21 +172,33 @@ function App() {
       console.log(error.response.data)
     }
   }
-  //NOTE
-  const addNote = () => {
-    localStorage.setItem("notes", JSON.stringify(notes))
-    setText("")
-    setNotes([...notes, text])
-    const noteA = localStorage.getItem("notes")
-    if (noteA) {
-      return JSON.parse(noteA)
-    } else {
-      return []
-    }
-
-    localStorage.noteA = notes
+  ////////////////////////// NOTE
+  const addNote = e => {
+    e.preventDefault()
+    const form = e.target
+    console.log("form", form)
+    const title = form.elements.title.value
+    const episode = form.elements.episode.value
+    console.log(title)
+    console.log(episode)
+    const newNote = { title, episode }
+    console.log(newNote)
+    const newNotes = [...notes, newNote]
+    setNotes(newNotes)
+    localStorage.notes = JSON.stringify(newNotes)
+    console.log(notes)
   }
 
+  const deleteNote = indexToRemove => {
+    // const noteToRemove = e.target.ide)
+    const newNotes = notes.filter((note, index) => {
+      return index !== indexToRemove
+    })
+
+    setNotes(newNotes)
+    localStorage.notes = JSON.stringify(newNotes)
+  }
+  console.log(notes)
   //context value
   const store = {
     animes: animes,
@@ -202,9 +214,7 @@ function App() {
     deleteLike: deleteLike,
     addNote: addNote,
     notes: notes,
-    text: text,
-    setText: setText,
-    setNotes: setNotes,
+    deleteNote: deleteNote,
   }
   return (
     <AnimeContext.Provider value={store}>

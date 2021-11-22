@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Card, Col, Container, Image, Row, Button, ButtonGroup, Alert } from "react-bootstrap"
 import AnimeCard from "../components/AnimeCard"
 import EditProfile from "../components/EditProfile"
@@ -7,18 +7,23 @@ import Note from "../components/Note"
 import AnimeContext from "../utils/AnimeContext"
 
 function Profile() {
-  const { profile, likes, notes } = useContext(AnimeContext)
+  //modal
+  const { profile, likes, notes, deleteNote } = useContext(AnimeContext)
+
+  const [show, setShow] = useState(false)
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
   if (!profile) {
     return <h1>Loading...</h1>
   }
-
   const mylikes = likes.filter(like => like._user._id === profile._id)
   return (
     <>
-      <h1 className="m-5 text-dark">Profile:</h1>
       <Container>
         <Row>
+          <h1 className="m-5 text-dark">Profile:</h1>
           <Col>
             <Card style={{ height: 200, width: 600 }} className="bg-dark">
               <Row>
@@ -36,24 +41,27 @@ function Profile() {
           </Col>
           {
             <Col className="ms-5">
-              <h1>Note:</h1>
-              <Note />
-              {/* <ul>
-                <Alert variant="success">
-                  <Alert.Heading>Hey, nice to see you</Alert.Heading>
-
-                  {notes.map(note => (
-                    <li>
-                      {note}
-                      <Button>Edit</Button>
-                    </li>
+              {/* <h1 className=" text-dark">Note:</h1> */}
+              <Note show={show} handleClose={handleClose} handleShow={handleShow} />
+              <Row>
+                <>
+                  {notes.map((note, index) => (
+                    <>
+                      <Col>
+                        <div>
+                          <h3>{note.title}</h3>
+                          <h5>{note.episode}</h5>
+                          <button>Edit</button>
+                          <button onClick={() => deleteNote(index)}>delete</button>
+                        </div>
+                      </Col>
+                    </>
                   ))}
-                </Alert>
-              </ul> */}
+                </>
+              </Row>
             </Col>
           }
         </Row>
-
         <h3 className="text-dark mt-5">My Favorite:</h3>
         <Row className="m-5" xs={1} sm={2} md={4}>
           {mylikes.map(like => (
