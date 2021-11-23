@@ -55,7 +55,7 @@ function Home() {
       <div className={Styles.text}>
         <h4>Watch anytime, anywhere</h4>
         <p>
-          <i>Stream on desktop and mobile. You can add notes in your profile.</i>{" "}
+          <i>Stream on desktop and mobile. You can add notes in your profile..</i>{" "}
         </p>
       </div>
     </>
