@@ -7,7 +7,7 @@ function Anime() {
   const { animes } = useContext(AnimeContext)
   return (
     <Container>
-      <Row xs={1} sm={2} md={5} className="my-5 mx-auto">
+      <Row xs={1} sm={2} md={4} className="my-5 mx-auto">
         {animes.map(anime => (
           <AnimeCard key={anime.mal_id} anime={anime} />
         ))}

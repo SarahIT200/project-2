@@ -30,7 +30,6 @@ function NavbarItem(props) {
             {localStorage.projectToken ? (
               <>
                 <li className={Styles.li}>
-                  </Link>
                   <Link to="/profile">Profile</Link>
                 </li>
                 <li className={Styles.li}>

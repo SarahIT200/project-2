@@ -9,24 +9,22 @@ function Likes(props) {
   const { like } = props
   return (
     <>
-      <Container>
-        {/* {likes.map(like => ( */}
-        <Col className="m-3">
-          <Card style={{ width: 200 }}>
-            <Card.Img variant="top" src={like.image} height="150px" />
-            <Card.Body>
-              <Card.Title>Name:{like.title}</Card.Title>
-              <Card.Link href={like.url} className="text-decoration-none text-secondary me-5">
-                Watch
-              </Card.Link>
-              <Button onClick={() => deleteLike(like._id)} key={like._id} variant="dark">
-                <FontAwesomeIcon icon={faTrashAlt} />
-              </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        {/* ))} */}
-      </Container>
+      {/* {likes.map(like => ( */}
+      <Col>
+        <Card style={{ width: 200 }}>
+          <Card.Img variant="top" src={like.image} height="150px" />
+          <Card.Body>
+            <Card.Title>Name:{like.title}</Card.Title>
+            <Card.Link href={like.url} className="text-decoration-none text-secondary me-5">
+              Watch
+            </Card.Link>
+            <Button onClick={() => deleteLike(like._id)} key={like._id} variant="dark">
+              <FontAwesomeIcon icon={faTrashAlt} />
+            </Button>
+          </Card.Body>
+        </Card>
+      </Col>
+      {/* ))} */}
     </>
   )
 }
