@@ -1,7 +1,8 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useContext, useEffect, useState } from "react"
 import { Button, Col, Form, Modal } from "react-bootstrap"
 import AnimeContext from "../utils/AnimeContext"
-
+import { faPencilAlt } from "@fortawesome/free-solid-svg-icons"
 function Note() {
   const { addNote } = useContext(AnimeContext)
 
@@ -13,7 +14,7 @@ function Note() {
   return (
     <>
       <Button variant="dark" onClick={handleShow}>
-        Add note
+        <FontAwesomeIcon icon={faPencilAlt} /> add note
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

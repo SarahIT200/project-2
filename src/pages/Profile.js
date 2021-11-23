@@ -6,6 +6,8 @@ import Likes from "../components/Likes"
 import Note from "../components/Note"
 import AnimeContext from "../utils/AnimeContext"
 import Styles from "../Profile.module.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faEraser } from "@fortawesome/free-solid-svg-icons"
 
 function Profile() {
   //modal
@@ -58,7 +60,7 @@ function Profile() {
                           <h3 className={Styles.text}>title: {note.title}</h3>
                           <h5 className={Styles.text}>eposide: {note.episode}</h5>
                           <button className={Styles.button} onClick={() => deleteNote(index)}>
-                            delete
+                            <FontAwesomeIcon icon={faEraser} />
                           </button>
                         </div>
                       </Col>
