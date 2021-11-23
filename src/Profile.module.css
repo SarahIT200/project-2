@@ -13,7 +13,8 @@
 }
 
 .text {
-    color: white;
+    color: rgb(133, 90, 65);
+
     text-align: center;
     position: relative;
     top: 100px;
@@ -30,7 +31,14 @@
     top: 100px;
     right: -43px;
     background-color: aliceblue;
-    color: black;
+    color: rgb(133, 90, 65);
     border: 1px solid aliceblue;
     border-radius: 5px;
+}
+
+.card {
+    background-color: rgba(197, 162, 137, 0.925);
+    color: rgb(133, 90, 65);
+    margin-top: 50px;
+    margin-top: 0px;
 }

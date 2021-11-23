@@ -18,24 +18,23 @@ function NavbarItem(props) {
         </>
       ) : (
         <>
-          <Link to="/" className="navbar-brand text-white mt-3">
+          <Link to="/" className="navbar-brand mt-3">
             {/* <Image
             src="https://i.pinimg.com/564x/bf/ca/2c/bfca2c24bee2349809f7372c709d98d7.jpg"
             height="70px"
             className="me-2"
           /> */}
-            <span>ANIMAE</span>
+            <span className={Styles.span}>ANIMAE</span>
           </Link>
           <ul>
             {localStorage.projectToken ? (
               <>
                 <li className={Styles.li}>
-                  <Link to="/profile" className="nav-link text-white">
-                    Profile
                   </Link>
+                  <Link to="/profile">Profile</Link>
                 </li>
                 <li className={Styles.li}>
-                  <Link to="/" onClick={logout} className="nav-link text-white">
+                  <Link to="/" onClick={logout}>
                     Logout
                   </Link>
                 </li>
@@ -43,14 +42,10 @@ function NavbarItem(props) {
             ) : (
               <>
                 <li className={Styles.li}>
-                  <Link to="/signup" className="nav-link text-white">
-                    Sign Up
-                  </Link>
+                  <Link to="/signup">Sign Up</Link>
                 </li>
                 <li className={Styles.li}>
-                  <Link to="/login" className="nav-link text-white">
-                    Login
-                  </Link>
+                  <Link to="/login">Login</Link>
                 </li>
               </>
             )}

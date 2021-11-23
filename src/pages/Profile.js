@@ -19,6 +19,9 @@ function Profile() {
   if (!profile) {
     return <h1>Loading...</h1>
   }
+  if (notes.length > 2) {
+    notes.splice(0, 1)
+  }
   const mylikes = likes.filter(like => like._user._id === profile._id)
   return (
     <>
@@ -26,18 +29,20 @@ function Profile() {
         <Row>
           <h1 className="m-5 text-dark">Profile:</h1>
           <Col>
-            <Card style={{ height: 200, width: 600 }} className="bg-dark">
-              <Row>
-                <Col xs={6} md={4}>
-                  <Image src={profile.photo} height="150px" width="150px" className="m-3" roundedCircle />
-                </Col>
-                <Col>
-                  <Card.Title className="mt-5 text-light">
-                    {profile.firstName} {profile.lastName}
-                  </Card.Title>
-                  <Card.Text className="text-light">{profile.email} </Card.Text>
-                </Col>
-              </Row>
+            <Card style={{ height: 250, width: 600 }} className={Styles.card}>
+              <Card.Body className={Styles.card}>
+                <Row>
+                  <Col xs={6} md={4}>
+                    <Image src={profile.photo} height="150px" width="150px" className="m-3" roundedCircle />
+                  </Col>
+                  <Col>
+                    <Card.Title className="mt-5">
+                      {profile.firstName} {profile.lastName}
+                    </Card.Title>
+                    <Card.Text>{profile.email} </Card.Text>
+                  </Col>
+                </Row>
+              </Card.Body>
             </Card>
           </Col>
           {
