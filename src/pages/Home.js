@@ -51,6 +51,11 @@ function Home() {
           <button className={Styles.btn3}>Anime</button>
         </Link>
       </div>
+
+      <div className={Styles.text}>
+        <h4>Watch anytime, anywhere</h4>
+        <p>Stream on desktop and mobile. You can add notes in your profile. </p>
+      </div>
     </>
   )
 }
