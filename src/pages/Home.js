@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import CaresouselItem from "../components/CaresouselItem"
 import Styles from "../Home.module.css"
 import AnimeContext from "../utils/AnimeContext"
-
 function Home() {
   const { logout } = useContext(AnimeContext)
   const CarouselPic = [
@@ -28,7 +27,6 @@ function Home() {
             <Link to="/login">
               <button className={Styles.btn1}>login</button>
             </Link>
-
             <Link to="/signup">
               <button className={Styles.btn2}>signup</button>
             </Link>
@@ -40,26 +38,22 @@ function Home() {
                 logout
               </button>
             </Link>
-
             <Link to="/profile">
               <button className={Styles.btn2}>Profile</button>
             </Link>
           </>
         )}
-
         <Link to="/animes">
           <button className={Styles.btn3}>Anime</button>
         </Link>
       </div>
-
       <div className={Styles.text}>
         <h4>Watch anytime, anywhere</h4>
         <p>
-          <i>Stream on desktop and mobile. You can add notes in your profile.</i>{" "}
+          <i>Stream on desktop and mobile. You can add notes in your profile..</i>{" "}
         </p>
       </div>
     </>
   )
 }
-
 export default Home
