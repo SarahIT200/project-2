@@ -5,6 +5,7 @@ import EditProfile from "../components/EditProfile"
 import Likes from "../components/Likes"
 import Note from "../components/Note"
 import AnimeContext from "../utils/AnimeContext"
+import Styles from "../Profile.module.css"
 
 function Profile() {
   //modal
@@ -48,11 +49,12 @@ function Profile() {
                   {notes.map((note, index) => (
                     <>
                       <Col>
-                        <div>
-                          <h3>{note.title}</h3>
-                          <h5>{note.episode}</h5>
-                          <button>Edit</button>
-                          <button onClick={() => deleteNote(index)}>delete</button>
+                        <div className={Styles.note}>
+                          <h3 className={Styles.text}>title: {note.title}</h3>
+                          <h5 className={Styles.text}>eposide: {note.episode}</h5>
+                          <button className={Styles.button} onClick={() => deleteNote(index)}>
+                            delete
+                          </button>
                         </div>
                       </Col>
                     </>

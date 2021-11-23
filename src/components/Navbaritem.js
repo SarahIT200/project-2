@@ -29,12 +29,12 @@ function NavbarItem(props) {
           <ul>
             {localStorage.projectToken ? (
               <>
-                <li>
+                <li className={Styles.li}>
                   <Link to="/profile" className="nav-link text-white">
                     Profile
                   </Link>
                 </li>
-                <li>
+                <li className={Styles.li}>
                   <Link to="/" onClick={logout} className="nav-link text-white">
                     Logout
                   </Link>
@@ -42,12 +42,12 @@ function NavbarItem(props) {
               </>
             ) : (
               <>
-                <li>
+                <li className={Styles.li}>
                   <Link to="/signup" className="nav-link text-white">
                     Sign Up
                   </Link>
                 </li>
-                <li>
+                <li className={Styles.li}>
                   <Link to="/login" className="nav-link text-white">
                     Login
                   </Link>

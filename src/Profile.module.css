@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+.note {
+    background-image: url("https://i.pinimg.com/564x/0e/3d/09/0e3d09a6d80736c7ce5b79cba47b29a2.jpg");
+    /* background-color: wheat; */
+    background-position: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.text {
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 100px;
+    right: 30px;
+    font-family: 'Abel', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 200;
+    font-size: 15px;
+}
+
+.button {
+    text-align: center;
+    position: relative;
+    top: 100px;
+    right: -43px;
+    background-color: aliceblue;
+    color: black;
+    border: 1px solid aliceblue;
+    border-radius: 5px;
+}
