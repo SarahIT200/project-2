@@ -12,7 +12,7 @@ function AnimeCard(props) {
     <Col>
       <Card className="bg-light  ms-5 mb-5">
         <Link to={`/one-anime/${anime.mal_id}`}>
-          <Card.Img variant="top" src={anime.image_url} height="180px" className="mt-3" />
+          <Card.Img variant="top" src={anime.image_url} height="180px" />
         </Link>
         <Card.Body>
           <Card.Text

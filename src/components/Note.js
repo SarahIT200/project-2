@@ -13,8 +13,8 @@ function Note() {
 
   return (
     <>
-      <Button variant="dark" onClick={handleShow}>
-        <FontAwesomeIcon icon={faPencilAlt} /> add note
+      <Button variant="dark" onClick={handleShow} className="text-secondary">
+        <FontAwesomeIcon icon={faPencilAlt} /> Add Note
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

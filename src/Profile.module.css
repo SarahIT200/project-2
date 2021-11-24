@@ -16,10 +16,7 @@
 
 .text {
     color: rgb(133, 90, 65);
-
     text-align: center;
-
-
     font-family: 'Abel', sans-serif;
     font-family: 'Roboto Mono', monospace;
     font-weight: 200;
@@ -35,7 +32,7 @@
     color: rgb(133, 90, 65);
     border: 1px solid aliceblue;
     border-radius: 5px;
-    font-family: 'Abel', sans-serif;
+
 }
 
 .card {
