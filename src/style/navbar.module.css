@@ -34,7 +34,7 @@
     text-decoration: underline;
 }
 
-.new {
+.goBackbutton {
     position: absolute;
     text-decoration: none;
     left: 250px;
@@ -43,7 +43,7 @@
     font-weight: 500;
 }
 
-.new:hover {
+.goBackbutton:hover {
     color: white;
 }
 

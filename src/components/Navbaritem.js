@@ -12,7 +12,7 @@ function NavbarItem(props) {
       {/* go back button */}
       {inAnime === true ? (
         <>
-          <Link to="/animes" className={Styles.new}>
+          <Link to="/animes" className={Styles.goBackbutton}>
             Go Back
           </Link>
         </>
