@@ -116,6 +116,7 @@ function App() {
           Authorization: localStorage.projectToken,
         },
       })
+      getProfile()
     } catch (error) {
       console.log(error?.response?.data)
     }
@@ -130,6 +131,7 @@ function App() {
         },
       })
       setLikes(response.data)
+
       console.log(likes)
     } catch (error) {
       console.log(error?.response?.data)
