@@ -20,11 +20,13 @@ function NavbarItem(props) {
         <>
           <Link to="/" className="navbar-brand mt-3">
             <Image
-              src="https://i.pinimg.com/564x/bf/ca/2c/bfca2c24bee2349809f7372c709d98d7.jpg"
-              height="70px"
+              src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Anime_eye.svg"
+              height="50px"
               className="me-2"
             />
-            <span className={Styles.span}>ANIMAE</span>
+            <span>
+              <b>ANIME</b>
+            </span>
           </Link>
           <ul>
             {localStorage.projectToken ? (
