@@ -5,7 +5,7 @@ import EditProfile from "../components/EditProfile"
 import Likes from "../components/Likes"
 import Note from "../components/Note"
 import AnimeContext from "../utils/AnimeContext"
-import Styles from "../Profile.module.css"
+import Styles from "../style/Profile.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEraser } from "@fortawesome/free-solid-svg-icons"
 
@@ -29,7 +29,7 @@ function Profile() {
     <>
       <Container>
         <Row>
-          <h1 className="m-5 text-dark">Profile:</h1>
+          <h1 className={Styles.title}>Profile:</h1>
           <Col>
             <Card style={{ height: 250, width: 600 }} className={Styles.card}>
               <Card.Body className={Styles.card}>
@@ -57,8 +57,10 @@ function Profile() {
                     <>
                       <Col>
                         <div className={Styles.note}>
-                          <h3 className={Styles.text}>title: {note.title}</h3>
-                          <h5 className={Styles.text}>eposide: {note.episode}</h5>
+                          <div className={Styles.text}>
+                            <h3>title: {note.title}</h3>
+                            <h5>eposide: {note.episode}</h5>
+                          </div>
                           <button className={Styles.button} onClick={() => deleteNote(index)}>
                             <FontAwesomeIcon icon={faEraser} />
                           </button>
@@ -71,7 +73,7 @@ function Profile() {
             </Col>
           }
         </Row>
-        <h3 className="text-dark mt-5">My Favorite:</h3>
+        <h3 className={Styles.favorite}>My Favorite:</h3>
         <Row className="m-5" xs={1} sm={2} md={4}>
           {mylikes.map(like => (
             <Likes like={like} />

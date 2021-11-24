@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react"
 import { Button, Col, Form, Modal } from "react-bootstrap"
 import AnimeContext from "../utils/AnimeContext"
 import { faPencilAlt } from "@fortawesome/free-solid-svg-icons"
+import Styles from "../style/Profile.module.css"
 function Note() {
   const { addNote } = useContext(AnimeContext)
 
@@ -13,9 +14,9 @@ function Note() {
 
   return (
     <>
-      <Button variant="dark" onClick={handleShow} className="text-secondary">
+      <button onClick={handleShow} className={Styles.btnAdd}>
         <FontAwesomeIcon icon={faPencilAlt} /> Add Note
-      </Button>
+      </button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>NOTE</Modal.Title>
@@ -37,7 +38,7 @@ function Note() {
                 <Form.Control type="number" name="episode" />
               </Col>
             </Form.Group>
-            <Button variant="dark" onClick={handleClose} type="submit">
+            <Button variant="dark" className="mt-3" onClick={handleClose} type="submit">
               Add
             </Button>
           </Form>

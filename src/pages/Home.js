@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 import CaresouselItem from "../components/CaresouselItem"
-import Styles from "../Home.module.css"
+import Styles from "../style/Home.module.css"
 import AnimeContext from "../utils/AnimeContext"
 function Home() {
   const { logout } = useContext(AnimeContext)

@@ -1,9 +1,3 @@
-html body {
-
-    /* background-color: rgb(197, 162, 137); */
-
-}
-
 .btnContainer {
     display: flex;
     flex-direction: column;

@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { Card, Button, Row, Col } from "react-bootstrap"
 import AnimeContext from "../utils/AnimeContext"
-import Styles from "../Anime.module.css"
+import Styles from "../style/Anime.module.css"
 import { Link } from "react-router-dom"
 
 function AnimeCard(props) {

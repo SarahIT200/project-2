@@ -4,7 +4,7 @@ import AnimeContext from "../utils/AnimeContext"
 function Signup() {
   const { signup } = useContext(AnimeContext)
   return (
-    <Form className="mt-5 text-white me-5 ms-5" onSubmit={signup}>
+    <Form className="m-auto" onSubmit={signup}>
       <Form.Group as="Row" className="mb-3">
         <Form.Label className="text-black">First Name</Form.Label>
         <Col md="6">

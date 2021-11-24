@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { useParams } from "react-router"
 import AnimeContext from "../utils/AnimeContext"
-import Styles from "../oneanime.module.css"
+import Styles from "../style/oneanime.module.css"
 import NavbarItem from "../components/Navbaritem"
 
 function OneAnime() {
@@ -17,6 +17,7 @@ function OneAnime() {
 
   return (
     <>
+      <div className={Styles.background}></div>
       <NavbarItem inAnime={true} />
       <div className={Styles.container}>
         <img src={oneAnime.image_url} className={Styles.photo} />

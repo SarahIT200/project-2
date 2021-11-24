@@ -11,7 +11,6 @@ function Login() {
         <Col md="6">
           <Form.Control type="email" name="email" placeholder="Enter email" />
         </Col>
-        <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text>
       </Form.Group>
 
       <Form.Group as="Row" className="mb-3" controlId="formBasicPassword">
