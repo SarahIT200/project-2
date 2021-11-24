@@ -17,7 +17,8 @@
 
 .btnLike:hover {
 
-    background-color: rgb(209, 202, 192);
+    background-color: rgb(133, 90, 65);
+    color: rgb(197, 162, 137);
 }
 
 .text {

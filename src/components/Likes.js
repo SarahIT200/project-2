@@ -12,11 +12,11 @@ function Likes(props) {
     <>
       {/* {likes.map(like => ( */}
       <Col>
-        <Card style={{ width: 200 }}>
-          <Card.Img variant="top" src={like.image} height="150px" />
+        <Card>
+          <Card.Img variant="top" src={like.image} height="200px" />
           <Card.Body>
             <Card.Title>Name:{like.title}</Card.Title>
-            <Card.Link href={like.url} className="text-decoration-none text-secondary me-5">
+            <Card.Link href={like.url} className="text-decoration-none text-secondary me-5" className={Styles.link}>
               Watch
             </Card.Link>
             <button onClick={() => deleteLike(like._id)} key={like._id} className={Styles.removeLike}>

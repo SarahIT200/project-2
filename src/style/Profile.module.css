@@ -67,4 +67,19 @@
 .removeLike {
     background-color: rgba(250, 235, 215, 0.712);
     color: rgb(133, 90, 65);
+    position: absolute;
+    left: 240px;
+    bottom: 5px;
+}
+
+.link {
+    position: relative;
+    bottom: -15px;
+    right: 10px;
+    color: rgb(133, 90, 65);
+}
+
+.link:hover {
+    color: rgb(82, 76, 76);
+    text-decoration: none;
 }
