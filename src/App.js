@@ -34,27 +34,6 @@ function App() {
       console.log(error?.response?.data)
     }
   }
-  const editProfile = async e => {}
-
-  const confirmProfile = async e => {
-    e.preventDefault()
-    const form = e.target
-    try {
-      const profileBody = {
-        firstName: form.elements.firstName.value,
-        lastName: form.elements.lastName.value,
-        email: form.elements.email.value,
-        photo: form.elements.photo.value,
-      }
-      await axios.put("https://vast-chamber-06347.herokuapp.com/api/user/me", profileBody, {
-        headers: {
-          Authorization: localStorage.projectToken,
-        },
-      })
-    } catch (error) {
-      console.log(error?.response?.data)
-    }
-  }
 
   //puplic API
   const getAnime = async () => {
@@ -69,10 +48,10 @@ function App() {
   //use Effict
   useEffect(() => {
     getAnime()
+    getLike()
     // setNotes(JSON.parse(localStorage.notes))
     if (localStorage.projectToken) {
       getProfile()
-      getLike()
     }
   }, [])
 
@@ -207,8 +186,6 @@ function App() {
     logout: logout,
     getProfile: getProfile,
     profile: profile,
-    editProfile: editProfile,
-    confirmProfile: confirmProfile,
     like: like,
     likes: likes,
     deleteLike: deleteLike,

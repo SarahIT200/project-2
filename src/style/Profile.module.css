@@ -83,3 +83,23 @@
     color: rgb(82, 76, 76);
     text-decoration: none;
 }
+
+.div {
+    margin-top: 100px;
+}
+
+.episode {
+    color: rgb(133, 90, 65);
+}
+
+.modalTitle {
+    color: rgb(133, 90, 65);
+}
+
+.moduleButton {
+    background-color: rgba(197, 162, 137, 0.925);
+    color: rgb(133, 90, 65);
+    border-radius: 9px;
+    margin-top: 20px;
+    width: 80px;
+}

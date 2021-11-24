@@ -1,7 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { Card, Col, Container, Image, Row, Button, ButtonGroup, Alert } from "react-bootstrap"
-import AnimeCard from "../components/AnimeCard"
-import EditProfile from "../components/EditProfile"
+import { Card, Col, Container, Image, Row, Button, ButtonGroup, Alert, Spinner } from "react-bootstrap"
 import Likes from "../components/Likes"
 import Note from "../components/Note"
 import AnimeContext from "../utils/AnimeContext"
@@ -19,7 +17,11 @@ function Profile() {
   const handleShow = () => setShow(true)
 
   if (!profile) {
-    return <h1>Loading...</h1>
+    return (
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    )
   }
   if (notes.length > 2) {
     notes.splice(0, 1)
@@ -27,9 +29,9 @@ function Profile() {
   const mylikes = likes.filter(like => like._user._id === profile._id)
   return (
     <>
-      <Container>
+      <Container className={Styles.div}>
         <Row>
-          <h1 className={Styles.title}>Profile:</h1>
+          {/* <h1 className={Styles.title}>Profile:</h1> */}
           <Col>
             <Card style={{ height: 250, width: 600 }} className={Styles.card}>
               <Card.Body className={Styles.card}>

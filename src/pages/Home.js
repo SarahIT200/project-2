@@ -1,13 +1,15 @@
-import { useContext } from "react"
+import { useContext, useRef } from "react"
 import { Link } from "react-router-dom"
-
 import Styles from "../style/Home.module.css"
 import AnimeContext from "../utils/AnimeContext"
+import Anime from "./Anime"
 function Home() {
-  const { logout } = useContext(AnimeContext)
+  const { logout, animes } = useContext(AnimeContext)
+  const animePage = useRef(null)
 
+  const goToAnime = () => window.scrollTo({ top: animePage.current.offsetTop, behavior: "smooth" })
   return (
-    <>
+    <div className={Styles.bg}>
       <img
         className={Styles.img}
         src="https://i.pinimg.com/originals/c1/c9/ee/c1c9ee94ab4c00df8b09b87752f10168.gif"
@@ -37,17 +39,21 @@ function Home() {
             </Link>
           </>
         )}
-        <Link to="/animes">
-          <button className={Styles.btn3}>Anime</button>
-        </Link>
+
+        <button className={Styles.btn3} onClick={goToAnime}>
+          Anime
+        </button>
       </div>
       <div className={Styles.text}>
         <h4>Watch anytime, anywhere</h4>
         <p>
-          <i>Stream on desktop and mobile. You can add notes in your profile..</i>{" "}
+          <i>Stream on desktop and mobile. You can add notes in your profile..</i>
         </p>
       </div>
-    </>
+      <div ref={animePage}>
+        <Anime animes={animes} />
+      </div>
+    </div>
   )
 }
 export default Home

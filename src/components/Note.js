@@ -19,12 +19,12 @@ function Note() {
       </button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>NOTE</Modal.Title>
+          <Modal.Title className={Styles.modalTitle}>NOTE</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form className=" text-white me-5 ms-5" onSubmit={e => addNote(e)}>
             <Form.Group as="Row" className="mb-3" controlId="formBasicEmail">
-              <Form.Label className="text-black">Title:</Form.Label>
+              <Form.Label className={Styles.modalTitle}>Title:</Form.Label>
               <Col md="6">
                 <Form.Control type="text" name="title" />
               </Col>
@@ -32,15 +32,15 @@ function Note() {
 
             <Form.Group as="Row" className="mb-3" controlId="formBasicPassword">
               <Col>
-                <Form.Label className="text-black">Episode:</Form.Label>
+                <Form.Label className={Styles.episode}>Episode:</Form.Label>
               </Col>
               <Col md="6">
                 <Form.Control type="number" name="episode" />
               </Col>
             </Form.Group>
-            <Button variant="dark" className="mt-3" onClick={handleClose} type="submit">
+            <button className={Styles.moduleButton} onClick={handleClose} type="submit">
               Add
-            </Button>
+            </button>
           </Form>
         </Modal.Body>
         <Modal.Footer></Modal.Footer>

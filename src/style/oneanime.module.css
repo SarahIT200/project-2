@@ -1,17 +1,10 @@
-.background {
-    height: 100vh;
-    width: 1500px;
-    background-color: antiquewhite;
-    position: absolute;
-    z-index: 0;
-}
-
 .container {
     margin-left: 300px;
     text-align: center;
-    margin-right: 400px;
+    margin-right: 200px;
     position: absolute;
     z-index: 1;
+    height: 0;
 }
 
 .photo {
@@ -43,4 +36,10 @@
     color: rgb(133, 90, 65);
     border: 1px solid black;
 
+}
+
+.image {
+    position: relative;
+    top: -380px;
+    left: 800px;
 }

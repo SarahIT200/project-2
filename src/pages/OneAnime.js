@@ -18,7 +18,6 @@ function OneAnime() {
   return (
     <>
       <div className={Styles.background}></div>
-      <NavbarItem inAnime={true} />
       <div className={Styles.container}>
         <img src={oneAnime.image_url} className={Styles.photo} />
         <p className={Styles.text}>{oneAnime.title}</p>
@@ -28,6 +27,11 @@ function OneAnime() {
             watch
           </a>
         </h3>
+        <img
+          className={Styles.image}
+          src="https://i.pinimg.com/564x/7c/74/b9/7c74b9d5e416d036fc5614665a137fc0.jpg"
+          alt=""
+        />
       </div>
     </>
   )

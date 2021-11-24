@@ -6,8 +6,9 @@ import Styles from "../style/Anime.module.css"
 
 function Anime() {
   const { animes } = useContext(AnimeContext)
+
   return (
-    <>
+    <div className={Styles.bg}>
       <h1 className={Styles.h1}>ANIME LIST</h1>
       <Container>
         <Row xs={1} sm={2} md={4} className="my-5 mx-auto">
@@ -16,7 +17,7 @@ function Anime() {
           ))}
         </Row>
       </Container>
-    </>
+    </div>
   )
 }
 
