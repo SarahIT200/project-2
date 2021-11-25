@@ -11,11 +11,6 @@ function Profile() {
   //modal
   const { profile, likes, notes, deleteNote } = useContext(AnimeContext)
 
-  const [show, setShow] = useState(false)
-
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
-
   if (!profile) {
     return (
       <Spinner animation="border" role="status">
@@ -52,7 +47,7 @@ function Profile() {
           {
             <Col className="ms-5">
               {/* <h1 className=" text-dark">Note:</h1> */}
-              <Note show={show} handleClose={handleClose} handleShow={handleShow} />
+              <Note />
               <Row>
                 <>
                   {notes.map((note, index) => (

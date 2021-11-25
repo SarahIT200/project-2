@@ -137,6 +137,7 @@ function App() {
       console.log(error?.response?.data)
     }
   }
+
   //delete like
   const deleteLike = async id => {
     try {
@@ -153,6 +154,7 @@ function App() {
       console.log(error.response.data)
     }
   }
+
   ////////////////////////// NOTE
   const addNote = e => {
     e.preventDefault()
@@ -171,7 +173,6 @@ function App() {
   }
 
   const deleteNote = indexToRemove => {
-    // const noteToRemove = e.target.ide)
     const newNotes = notes.filter((note, index) => {
       return index !== indexToRemove
     })

@@ -11,7 +11,6 @@ function Note() {
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
-
   return (
     <>
       <button onClick={handleShow} className={Styles.btnAdd}>
