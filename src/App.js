@@ -15,7 +15,7 @@ function App() {
   const [animes, setAnime] = useState([])
   const [profile, setProfile] = useState(null)
   const [likes, setLikes] = useState([])
-  const [notes, setNotes] = useState(JSON.parse(localStorage.notes))
+  const [notes, setNotes] = useState(localStorage.notes ? JSON.parse(localStorage.notes) : [])
   const navigate = useNavigate()
 
   //profile

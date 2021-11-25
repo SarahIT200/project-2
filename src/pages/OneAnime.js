@@ -2,7 +2,6 @@ import { useContext } from "react"
 import { useParams } from "react-router"
 import AnimeContext from "../utils/AnimeContext"
 import Styles from "../style/oneanime.module.css"
-import NavbarItem from "../components/Navbaritem"
 
 function OneAnime() {
   const { animeId } = useParams()

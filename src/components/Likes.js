@@ -12,7 +12,7 @@ function Likes(props) {
     <>
       {/* {likes.map(like => ( */}
       <Col>
-        <Card>
+        <Card className="mt-3">
           <Card.Img variant="top" src={like.image} height="200px" />
           <Card.Body>
             <Card.Title>Name:{like.title}</Card.Title>
