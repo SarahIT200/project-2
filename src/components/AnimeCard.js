@@ -26,13 +26,7 @@ function AnimeCard(props) {
             Watch
           </Card.Link>
           {localStorage.projectToken ? (
-            <button
-              onClick={e => like(e, anime.mal_id)}
-              style={{ width: 60 }}
-              // className=" ms-5"
-              // variant="warning"
-              className={Styles.btnLike}
-            >
+            <button onClick={e => like(e, anime.mal_id)} style={{ width: 60 }} className={Styles.btnLike}>
               like
             </button>
           ) : null}
